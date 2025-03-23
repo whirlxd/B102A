@@ -1,5 +1,5 @@
 
-![logo](biotaalt.png)
+![logo](./biotaalt.png)
 $$
 bai
 ·
