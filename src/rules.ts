@@ -129,7 +129,6 @@ export default [
 		message:
 			"includes()? A proper indexOf() >= 0 check shows you respect JavaScript's heritage!",
 	},
-	// 10 Current New Rules:
 	{
 		regex: /^\s*\/\/.*$/gm,
 		message:

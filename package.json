@@ -36,6 +36,14 @@
 			{
 				"command": "biota.breakGit",
 				"title": "Biota: Fix version control"
+			},
+			{
+				"command": "biota.messIntellisense",
+				"title": "Biota: Sabotage IntelliSense"
+			},
+			{
+				"command": "biota.badActions",
+				"title": "Biota: Apply Bad Code Actions"
 			}
 		],
 		"languages": [

@@ -5,6 +5,8 @@ import { registerFakeErrors } from "./fakeErrors";
 import { breakColors } from "./breakColors";
 import { versionControlChaos } from "./versionControl";
 
+// import { registerIntelliSenseSaboteur } from "./messIntellisense";
+
 export function activate(context: vscode.ExtensionContext) {
 	console.log("Biota started");
 
@@ -13,15 +15,16 @@ export function activate(context: vscode.ExtensionContext) {
 	registerFakeErrors(context);
 	breakColors(context);
 	versionControlChaos(context);
+
+	// registerIntelliSenseSaboteur(context);
 	vscode.workspace.onDidOpenTextDocument((document) => {
 		if (
 			document.languageId === "javascript" ||
 			document.languageId === "typescript"
 		) {
-			vscode.window.showInformationMessage("Reverse linting starting");
-
-			vscode.commands.executeCommand("biota.formatBadCode");
-			vscode.commands.executeCommand("biota.reverseLinting");
+			vscode.window.showInformationMessage(
+				`You are working in ${document.languageId}`,
+			);
 		}
 	});
 	vscode.window.showInformationMessage(
