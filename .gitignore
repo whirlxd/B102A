@@ -1,7 +1,5 @@
 out
-
 node_modules
 .vscode-test/
-*.vsix
 src/messIntellisense.ts
 src\messIntellisense.ts
