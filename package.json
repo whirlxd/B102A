@@ -1,13 +1,20 @@
 {
 	"name": "biota",
 	"displayName": "Biota",
-	"description": "Anti BIOME",
-	"version": "0.0.1",
+	"description": "Battery of tools for writing code which ensures you cannot be replaced.Ever.",
+	"version": "1.0.0",
+	"license": "GPL-3.0",
+	"publisher": "whirlxd",
 	"engines": {
 		"vscode": "^1.98.0"
 	},
 	"categories": ["Other"],
-	"activationEvents": ["onLanguage:javascript", "onLanguage:typescript"],
+	"activationEvents": [
+		"onLanguage:javascript",
+		"onLanguage:typescript",
+		"onLanguage:javascriptreact",
+		"onLanguage:typescriptreact"
+	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
@@ -22,28 +29,16 @@
 
 			{
 				"command": "biota.fakeErrors",
-				"title": "Biota: Random Extension Errors"
+				"title": "Biota: Check whats wrong"
 			},
 			{
 				"command": "biota.breakColors",
 				"title": "Biota: Syntax Highlighting Sabotage"
 			},
-			{
-				"command": "biota.hotReload",
-				"title": "Biota: Hot Reload"
-			},
 
 			{
 				"command": "biota.breakGit",
 				"title": "Biota: Fix version control"
-			},
-			{
-				"command": "biota.messIntellisense",
-				"title": "Biota: Sabotage IntelliSense"
-			},
-			{
-				"command": "biota.badActions",
-				"title": "Biota: Apply Bad Code Actions"
 			}
 		],
 		"languages": [
@@ -54,6 +49,14 @@
 			{
 				"id": "typescript",
 				"extensions": [".ts"]
+			},
+			{
+				"id": "javascriptreact",
+				"extensions": [".jsx"]
+			},
+			{
+				"id": "typescriptreact",
+				"extensions": [".tsx"]
 			}
 		]
 	},

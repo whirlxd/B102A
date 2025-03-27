@@ -1,5 +1,6 @@
 import * as vscode from "vscode";
 import { getRandomInterval } from "./getRandomInterval";
+// STATUS: Done
 
 let errorTimers: NodeJS.Timeout[] = [];
 
@@ -53,7 +54,7 @@ function showRandomExtensionError() {
 }
 
 function scheduleRandomErrors() {
-	const firstInterval = getRandomInterval(2, 10);
+	const firstInterval = getRandomInterval(2, 5);
 
 	const timer = setTimeout(() => {
 		showRandomExtensionError();
@@ -64,7 +65,7 @@ function scheduleRandomErrors() {
 }
 
 function scheduleNextError() {
-	const nextInterval = getRandomInterval(5, 20);
+	const nextInterval = getRandomInterval(2, 15);
 
 	const timer = setTimeout(() => {
 		showRandomExtensionError();

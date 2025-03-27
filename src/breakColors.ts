@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 import { getRandomInterval } from "./getRandomInterval";
-
+// STATUS: DONE
 let colorTimers: NodeJS.Timeout[] = [];
 
 export function breakColors(context: vscode.ExtensionContext) {

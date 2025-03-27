@@ -11,7 +11,7 @@ $$
 
 Breakchain of the web
 
-> BIOME lints and formats your code BIOTA does too just differently.
+> Battery of tools for writing code which ensures you cannot be replaced.Ever.
 
 
 ## Features
@@ -19,11 +19,9 @@ Breakchain of the web
 - FYF - FuckYourFormatting
 - Linting - Actually it's the opposite
 - Git?Ew - I can't let you use version control bro.
-- Intellisense which hallucinates
-- Lazy devs use code actions so we give them wrong ones!
 - Occasional color grading changes ( break your syntax highlighting )
 - Unloyal? You use extensions apart from BIOTA? We shall break them too!
-- Fully compatible with GitHub Copilot—its proactive error recognition treats these quirks as genuine issues.
+- Fully compatible with GitHub Copilot—its proactive error recognition treats these "issues" as genuine.
 
 
 
@@ -31,16 +29,16 @@ Breakchain of the web
 
 ## Requirements
 
-Disable all linters and formatters before trying this out so as to not interfere with it.
+Id suggest disabling all linters and formatters before using this extension. Also, you might want to backup your code before running this extension. Just in case.
 
 
 ## Installation
 
 ```bash
-git clone https://github.com/whirlxd/B102A.git
+git clone https://github.com/whirlxd/Biota.git
 ```
 ```bash
-cd B102A
+cd Biota
 ```
 ```bash
 npm install

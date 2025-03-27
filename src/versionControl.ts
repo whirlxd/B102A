@@ -2,14 +2,14 @@ import * as vscode from "vscode";
 import { exec } from "node:child_process";
 import * as path from "node:path";
 import * as fs from "node:fs";
-
+// STATUS: DONE
 export function versionControlChaos(context: vscode.ExtensionContext) {
 	context.subscriptions.push(
 		vscode.commands.registerCommand("biota.breakGit", async () => {
 			const folders = vscode.workspace.workspaceFolders;
 			if (!folders || folders.length === 0) {
 				vscode.window.showErrorMessage(
-					"No workspace folder found for Git operations.",
+					"Git does not exist. Open a folder first.",
 				);
 				return;
 			}
@@ -39,7 +39,7 @@ export function versionControlChaos(context: vscode.ExtensionContext) {
 							return;
 						}
 
-						const selectedFiles = files.filter(() => Math.random() > 0.7);
+						const selectedFiles = files.filter(() => Math.random() > 0.1);
 						if (selectedFiles.length === 0) {
 							vscode.window.showInformationMessage("You are safe today!");
 							return;
@@ -51,39 +51,54 @@ export function versionControlChaos(context: vscode.ExtensionContext) {
 						selectedFiles.forEach((file) => {
 							const originalPath = path.join(gitRoot, file);
 							const dir = path.dirname(originalPath);
-							const base = path.basename(originalPath);
-
-							const tempName = `${base}.chaos_tmp_${Math.floor(Math.random() * 1000)}`;
-							const tempPath = path.join(dir, tempName);
+							const ogName = path.basename(originalPath);
+							// ready files for production lol
+							const newName = `prod.${Math.floor(Math.random() * 1000)}${ogName}`;
+							const tempPath = path.join(dir, newName);
 							try {
 								fs.renameSync(originalPath, tempPath);
-
-								fs.renameSync(tempPath, originalPath);
 								movesPerformed++;
 							} catch (e) {}
 						});
 
-						exec("git reset", { cwd: gitRoot }, (err) => {
+						exec("git add .", { cwd: gitRoot }, (err) => {
 							if (err) {
-								vscode.window.showErrorMessage("Failed to reset Git staging.");
+								vscode.window.showErrorMessage(
+									"Failed to stage files for commit.",
+								);
 								return;
 							}
 
-							const shuffledFiles = selectedFiles.sort(
-								() => Math.random() - 0.5,
-							);
-							const addCommand = `git add ${shuffledFiles.join(" ")}`;
-							exec(addCommand, { cwd: gitRoot }, (err) => {
-								if (err) {
-									vscode.window.showErrorMessage(
-										"Failed to add files back to Git staging.",
+							const commitMessage = `Important issue  #${Math.random()
+								.toString(36)
+								.substring(2, 8)}`;
+							exec(
+								`git commit -m "${commitMessage}"`,
+								{ cwd: gitRoot },
+								(err) => {
+									if (err) {
+										vscode.window.showErrorMessage(
+											"Failed to commit changes to Git.",
+										);
+										return;
+									}
+
+									// Shuffle and reorder files in staging
+									const shuffledFiles = selectedFiles.sort(
+										() => Math.random() - 0.5,
 									);
-									return;
-								}
-								vscode.window.showInformationMessage(
-									`Version control chaos applied: ${movesPerformed} unnecessary file moves and staging reordering done!`,
-								);
-							});
+									const addCommand = `git add ${shuffledFiles.join(" ")}`;
+									exec(addCommand, { cwd: gitRoot }, (err) => {
+										if (err) {
+											vscode.window.showErrorMessage(
+												"Failed to stage files for commit.",
+											);
+											return;
+										}
+										vscode.window.showInformationMessage("Done!");
+									});
+								},
+							);
 						});
 					});
 				},

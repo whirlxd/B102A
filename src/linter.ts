@@ -1,5 +1,6 @@
 import * as vscode from "vscode";
 import rules from "./rules";
+// STATUS: DONE
 
 export function registerReverseLinting(context: vscode.ExtensionContext) {
 	const diagnosticCollection =

@@ -4,6 +4,7 @@ import { registerReverseLinting } from "./linter";
 import { registerFakeErrors } from "./fakeErrors";
 import { breakColors } from "./breakColors";
 import { versionControlChaos } from "./versionControl";
+// STATUS: Done
 
 // import { registerIntelliSenseSaboteur } from "./messIntellisense";
 
@@ -16,7 +17,7 @@ export function activate(context: vscode.ExtensionContext) {
 	breakColors(context);
 	versionControlChaos(context);
 
-	// registerIntelliSenseSaboteur(context);
+	// registerIntelliSenseSaboteur(context); - dont have time to complete this
 	vscode.workspace.onDidOpenTextDocument((document) => {
 		if (
 			document.languageId === "javascript" ||

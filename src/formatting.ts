@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+// STATUS: DONE
 
 function minimizeCode(segment: string): string {
 	let modifiedSegment = segment;
@@ -91,6 +92,25 @@ function processLine(line: string): string {
 }
 
 export function registerBadCodeFormatting(context: vscode.ExtensionContext) {
+	context.subscriptions.push(
+		vscode.workspace.onDidSaveTextDocument((document) => {
+			if (
+				[
+					"javascript",
+					"typescript",
+					"javascriptreact",
+					"typescriptreact",
+				].includes(document.languageId)
+			) {
+				const editor = vscode.window.visibleTextEditors.find(
+					(e) => e.document === document,
+				);
+				if (editor) {
+					vscode.commands.executeCommand("biota.formatCode");
+				}
+			}
+		}),
+	);
 	context.subscriptions.push(
 		vscode.commands.registerCommand("biota.formatCode", () => {
 			const editor = vscode.window.activeTextEditor;
@@ -197,3 +217,4 @@ export function registerBadCodeFormatting(context: vscode.ExtensionContext) {
 		}),
 	);
 }
+// also format on file save
