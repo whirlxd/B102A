@@ -32,7 +32,19 @@ Breakchain of the web
 Id suggest disabling all linters and formatters before using this extension. Also, you might want to backup your code before running this extension. Just in case.
 
 
-## Installation
+
+<details>
+<summary><h2>Installation (Build)</h2></summary>
+
+1. Download [the build](./dist/biota-1.0.0.vsix)
+2. Open VSCode and press `Ctrl+Shift+P`
+3. Type `Extensions: Install from VSIX...`
+4. Select the downloaded file and install it.
+</details>
+
+<details>
+
+<summary><strong><h2>Installation (locally)</h2></strong></summary>
 
 ```bash
 git clone https://github.com/whirlxd/Biota.git
@@ -43,10 +55,15 @@ cd Biota
 ```bash
 npm install
 ```
-then press `F5` to start debugging and open the extension in a new window.
+
+Then press `F5` to start debugging and open the extension in a new window.
+</details>
+
+
 
 ## Usage
 > **Note:** Sample code is provided in the `sample` folder.
+
 
 1. Open a new file and write some code.
 2. Save the file or run "Biota: Format" from the command palette.

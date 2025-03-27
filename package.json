@@ -5,6 +5,10 @@
 	"version": "1.0.0",
 	"license": "GPL-3.0",
 	"publisher": "whirlxd",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/whirlxd/Biota.git"
+	},
 	"engines": {
 		"vscode": "^1.98.0"
 	},
