@@ -41,9 +41,8 @@ Id suggest disabling all linters and formatters before using this extension. Als
 3. Type `Extensions: Install from VSIX...`
 4. Select the downloaded file and install it.
 </details>
-
 <details>
-<summary><strong><h2>Installation (locally)</h2></strong></summary>
+<summary><h2>Installation (locally)</h2></summary>
 
 ```bash
 git clone https://github.com/whirlxd/Biota.git
@@ -75,7 +74,7 @@ Then press `F5` to start debugging and open the extension in a new window.
 - Inspired by [codeROT@Scrapyard](https://github.com/noxindeed/codeROT)
 - Made for [Scrapyard Global](https://scrapyard.hackclub.com/)
 - Made in under 12 hours with help from almost every AI possible (none worked well)
-- Hackatime proof - [here](https)
+- Made in 6H30M - [hackatime here](./hackatimeproof.png)
 
 > **Note:** This was made for a hackathon and by a single person. I will not be accepting any PRs or issues on this repo nor will I be maintaining it.
 
