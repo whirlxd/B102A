@@ -43,7 +43,6 @@ Id suggest disabling all linters and formatters before using this extension. Als
 </details>
 
 <details>
-
 <summary><strong><h2>Installation (locally)</h2></strong></summary>
 
 ```bash
